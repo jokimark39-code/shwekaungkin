@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ရွှေကောင်းကင် - Shwe Kaung Khain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Contact Page */
+        .page-header {
+            background-color: var(--bg-alt);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        /* Layout Container */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .contact-form-section, .contact-info-section {
+            flex: 1;
+        }
+
+        /* Form Styling */
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            background-color: #FAFAFA;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--cta-red);
+            background-color: #FFFFFF;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Info Styling */
+        .contact-info-section {
+            background-color: var(--bg-alt);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .info-block {
+            margin-bottom: 2rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.25rem;
+            color: var(--cta-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-block p, .info-block a {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .info-block a:hover {
+            text-decoration: underline;
+            color: var(--cta-red);
+        }
+
+        /* Map Section */
+        .map-section {
+            width: 100%;
+            height: 450px;
+            line-height: 0; /* Removes bottom gap under iframe */
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Desktop Layout Override */
+        @media (min-width: 1024px) {
+            .contact-container {
+                flex-direction: row;
+                gap: 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ရွှေကောင်းကင်</a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html" class="active">Contact Us</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: 0;">Get in Touch</h1>
+            <p style="margin-top: 1rem; color: var(--text-light);">We're ready to bring your printing projects to life. Reach out today for a quote or inquiry.</p>
+        </div>
+    </div>
+
+    <main class="contact-container container section-padding">
+        
+        <div class="contact-form-section">
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Send us a Message</h2>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Aung Aung" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. 09 123 456 789" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. yourname@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Interested Service</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Select a printing service...</option>
+                        <option value="offset">Offset Printing (High Volume)</option>
+                        <option value="digital">Digital Printing (Fast/Large Format)</option>
+                        <option value="both">Both / Unsure</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Project Details</label>
+                    <textarea id="message" name="message" placeholder="Please describe your printing needs, quantities, or ask any questions..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info-section">
+            <h2 style="margin-bottom: 2rem; font-size: 1.8rem;">Contact Information</h2>
+            
+            <div class="info-block">
+                <h3>📍 Our Address</h3>
+                <p>No. 45, Bogyoke Aung San Road,<br>
+                Pabedan Township, Yangon,<br>
+                Myanmar</p>
+            </div>
+
+            <div class="info-block">
+                <h3>📞 Phone</h3>
+                <p><a href="tel:+959123456789">+95 9 123 456 789</a></p>
+                <p><a href="tel:+959987654321">+95 9 987 654 321</a></p>
+            </div>
+
+            <div class="info-block">
+                <h3>✉️ Email</h3>
+                <p><a href="mailto:info@shwekaungkhain.com">info@shwekaungkhain.com</a></p>
+                <p><a href="mailto:sales@shwekaungkhain.com">sales@shwekaungkhain.com</a></p>
+            </div>
+
+            <div class="info-block">
+                <h3>🕒 Business Hours</h3>
+                <p>Monday - Saturday:<br>
+                <strong>9:00 AM - 5:00 PM</strong></p>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">Closed on Sundays and Public Holidays.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15279.162791443658!2d96.1466037!3d16.7725906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ec89cc64761b%3A0xc6e4a64d1c5e6fbc!2sSule%20Pagoda!5e0!3m2!1sen!2smm!4v1700000000000!5m2!1sen!2smm" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">ရွှေကောင်းကင်</a>
+                <p>Your trusted partner for commercial offset and digital printing in Myanmar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📍 123 Print Street, Yangon</li>
+                    <li>📞 +95 9 123 456 789</li>
+                    <li>✉️ info@shwekaungkhain.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ရွှေကောင်းကင် (Shwe Kaung Kin). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

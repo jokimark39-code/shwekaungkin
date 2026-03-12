@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ရွှေကောင်းကင် - Shwe Kaung Khain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for About Page */
+        .page-header {
+            background-color: var(--bg-alt);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .story-content {
+            flex: 1;
+        }
+
+        .story-content h2 {
+            font-size: 2rem;
+            color: var(--cta-red);
+            margin-bottom: 1rem;
+        }
+
+        .story-content p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .story-image {
+            flex: 1;
+            width: 100%;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #FFF;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            background-color: #FFF;
+            border-top: 1px solid #EEE;
+        }
+
+        /* Why Choose Us Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #FFF;
+            padding: 2.5rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid #E5E7EB;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* CMYK Accents for Features */
+        .border-cyan { border-top: 4px solid #00FFFF; }
+        .border-magenta { border-top: 4px solid #FF00FF; }
+        .border-yellow { border-top: 4px solid #FFD700; /* Adjusted Yellow for better visibility on white */ }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Desktop Layout Overrides */
+        @media (min-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .our-story {
+                flex-direction: row;
+                gap: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ရွှေကောင်းကင်</a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: 0;">About ရွှေကောင်းကင်</h1>
+            <p style="margin-top: 1rem; color: var(--text-light); max-width: 600px; margin-inline: auto;">Delivering premium offset and digital printing solutions across Myanmar with uncompromised quality and absolute precision.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="our-story container section-padding">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>Founded with a passion for bringing ideas to life, <strong>ရွှေကောင်းကင် (Shwe Kaung Khain)</strong> has grown into a trusted name in Myanmar's commercial printing industry. We bridge the gap between traditional printing craftsmanship and modern digital technology.</p>
+                <p>Whether it's a massive offset run for corporate profiles or a quick digital vinyl print for an upcoming event, our dedicated team ensures absolute precision, vibrant colors, and timely delivery every single time. We treat every project, large or small, with the care and attention it deserves.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://placehold.co/600x450/eeeeee/1A1A1A?text=Printing+Shop+Interior" alt="Shwe Kaung Khain Printing Shop">
+            </div>
+        </section>
+
+        <section class="bg-alt section-padding">
+            <div class="container">
+                <h2 class="section-title">Our Equipment & Capabilities</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item hover-cmyk">
+                        <img src="https://placehold.co/400x300/dddddd/1A1A1A?text=Offset+Printing+Press" alt="Offset Printing Press">
+                        <div class="gallery-caption">High-Volume Offset Presses</div>
+                    </div>
+                    <div class="gallery-item hover-cmyk">
+                        <img src="https://placehold.co/400x300/dddddd/1A1A1A?text=Large+Format+Digital" alt="Large Format Digital Printer">
+                        <div class="gallery-caption">Large Format Digital Printers</div>
+                    </div>
+                    <div class="gallery-item hover-cmyk">
+                        <img src="https://placehold.co/400x300/dddddd/1A1A1A?text=Finishing+%26+Binding" alt="Finishing & Binding Equipment">
+                        <div class="gallery-caption">Professional Finishing & Binding</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section-padding">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card border-cyan">
+                    <div class="feature-icon">💎</div>
+                    <h3>Quality Materials</h3>
+                    <p>We source only the best premium papers, durable vinyls, and vibrant inks to ensure your brand looks its absolute best.</p>
+                </div>
+                <div class="feature-card border-magenta">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Deadlines matter. Our streamlined digital and offset processes ensure your print jobs are delivered on time, every time.</p>
+                </div>
+                <div class="feature-card border-yellow">
+                    <div class="feature-icon">👥</div>
+                    <h3>Expert Team</h3>
+                    <p>From pre-press file checking to final binding, our experienced technicians oversee every step for flawless execution.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">ရွှေကောင်းကင်</a>
+                <p>Your trusted partner for commercial offset and digital printing in Myanmar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📍 123 Print Street, Yangon</li>
+                    <li>📞 +95 9 123 456 789</li>
+                    <li>✉️ info@shwekaungkhain.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ရွှေကောင်းကင် (Shwe Kaung Khain). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

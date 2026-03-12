@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | ရွှေကောင်းကင် - Shwe Kaung Khain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Products Page */
+        .page-header {
+            background-color: var(--bg-alt);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .filter-bar {
+            position: sticky;
+            top: 70px; /* Right below the header */
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 1rem 0;
+            z-index: 999;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #E0E0E0;
+            color: var(--text-dark);
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--cta-red);
+            background-color: var(--cta-red);
+            color: #FFF;
+        }
+
+        .quote-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .quote-link:hover {
+            color: var(--cta-red);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ရွှေကောင်းကင်</a>
+            
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: 0;">Our Product Catalog</h1>
+        </div>
+    </div>
+
+    <div class="filter-bar container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="offset">Offset Printing</button>
+        <button class="filter-btn" data-filter="digital">Digital Printing</button>
+    </div>
+
+    <main class="container section-padding">
+        <div class="product-grid" id="productGrid">
+            
+            <script>
+                // A quick inline array to generate the extensive list cleanly in the DOM.
+                // In a static site, this saves hundreds of lines of repetitive HTML.
+                const offsetItems = [
+                    "Flyer", "Catalogue", "Company Profile Book", "Label Card / Display card", 
+                    "File Holder", "Paper bags", "Paper Box", "ဗလာစာအုပ်", "ဘောင်ချာစာအုပ်", 
+                    "Gifts Coupons", "အညွှန်း", "Table Calendar", "Wall Calendar", "မုန့်တံဆိပ်အမျိုးမျိုး", 
+                    "Sticker", "Note pad", "Note Book", "Leather Notebook", "စာအိတ်", "Letter Head", 
+                    "ဆေးခန်းစာအုပ်", "ရေသန့်ပတ်"
+                ];
+
+                const digitalItems = [
+                    "Vinyl", "Billboard", "Sticker", "Wall stickers", "Mirror Stickers", "Car Sticker", 
+                    "UV sticker", "Diamond Stickers", "UV Transfer Stickers", "Hologram Stickers", 
+                    "Gifts Items", "ဘောပင်", "Key Chains", "Water bottle", "ဖန်ခွက်", "X - Stand", 
+                    "Window Stand", "Roll - up Stand", "Promotion Table", "Spain & Wheels", "J Flags", 
+                    "Sun Protection Film", "ရှေ့ဘုတ် Stand", "Original Lightbox", "Backlit Film", 
+                    "PP Board", "PVC Board", "Address Cards", "ID Cards", "VIP Cards", "Promotion Cards"
+                ];
+
+                const grid = document.getElementById('productGrid');
+
+                // Generate Offset Cards
+                offsetItems.forEach(item => {
+                    grid.innerHTML += `
+                        <div class="product-card filterable hover-cmyk" data-category="offset">
+                            <img src="https://placehold.co/400x400/eeeeee/1A1A1A?text=${encodeURIComponent(item)}" alt="${item}">
+                            <div class="product-info">
+                                <h4>${item}</h4>
+                                <a href="contact.html" class="quote-link">Request Quote &rarr;</a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Generate Digital Cards
+                digitalItems.forEach(item => {
+                    grid.innerHTML += `
+                        <div class="product-card filterable hover-cmyk" data-category="digital">
+                            <img src="https://placehold.co/400x400/eeeeee/1A1A1A?text=${encodeURIComponent(item)}" alt="${item}">
+                            <div class="product-info">
+                                <h4>${item}</h4>
+                                <a href="contact.html" class="quote-link">Request Quote &rarr;</a>
+                            </div>
+                        </div>
+                    `;
+                });
+            </script>
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">ရွှေကောင်းကင်</a>
+                <p>Your trusted partner for commercial offset and digital printing in Myanmar.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>📍 123 Print Street, Yangon</li>
+                    <li>📞 +95 9 123 456 789</li>
+                    <li>✉️ info@shwekaungkhain.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ရွှေကောင်းကင် (Shwe Kaung Khain). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card.filterable');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // 1. Update Active State on Buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // 2. Filter the Grid
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    productCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block'; // Show all
+                        } else if (card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block'; // Show matched
+                        } else {
+                            card.style.display = 'none'; // Hide unmatched
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
